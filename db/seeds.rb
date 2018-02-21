@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #if ENV["user"]
-	6.times do
+	8.times do
 		User.create!(
 	  		name:     Faker::Name.name,
 	    	email:    Faker::Internet.unique.email,
@@ -32,7 +32,7 @@ lists = List.all
 
 #if ENV["item"]
 	lists.each do |list|
-		6.times do
+		8.times do
 			Item.create!(
 	  			name:     Faker::Simpsons.location,
 	    		list_id:  list.id
