@@ -2,6 +2,7 @@ class Api::ListsController < ApiController
   before_action :authenticated?
 
   def create
+    print "list create"
     list = List.new(list_params)
     list.user_id = params[:user_id]
     if list.save
@@ -12,6 +13,7 @@ class Api::ListsController < ApiController
   end
 
   def destroy
+    print "list destroy"
     begin
       list = List.find(params[:id])
       list.destroy
@@ -22,6 +24,7 @@ class Api::ListsController < ApiController
   end
 
   def update
+    print "list update"
     list = List.find(params[:id])
     if list.update(list_params)
       render json: list

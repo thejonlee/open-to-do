@@ -2,6 +2,7 @@ class Api::ItemsController < ApiController
   before_action :authenticated?
 
   def create
+    print "item create"
     item = Item.new(item_params)
     item.list_id = params[:list_id]
     if item.save
@@ -12,6 +13,7 @@ class Api::ItemsController < ApiController
   end
 
   def update
+    print "item update"
     item = Item.find(params[:id])
     if item.update(item_params)
       render json: item
